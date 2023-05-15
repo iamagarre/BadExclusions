@@ -5,7 +5,7 @@ BadExclusions is a tool to identify custom or undocumented folder exclusions on 
 It creates a txt file on every folder and subfolder on drive C:\ that contains the EICAR string. After creating all the files then it tries to read each file. If the AV/EDR removed the file it means no exclusion for that folder. If the file still exists then an exclusion is on the folder. The tool will print the full path to each file not removed by AV/EDR.
 
 # Original idea?
-I was talking with a friend about custom exclusions made on AV/EDR and how to easily identify them and we ended up talking like "ey dude! it will be cool to identify custom exclusions easy and fast, how can we do it?" and this is how we started the development process.
+I was talking with a friend about custom exclusions made on AV/EDR and how to easily identify them. We had a silly idea but it actually works.
 
 # This is a really noisy tool
 Yes, it is. Currently on antiscan.me it has a 0/26 detection and our current EDR does not flag the tool as malicious and does not kill the process while we create all that eicar files. This is basically because there is nothing malicious on the tool. Even the EICAR string is not flagged because in order to print it on a file you have to scape some characters.
