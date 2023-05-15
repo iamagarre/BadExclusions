@@ -8,7 +8,7 @@ It creates a txt file on every folder and subfolder on drive C:\ that contains t
 I was talking with a friend about custom exclusions made on AV/EDR and how to easily identify them. We had a silly idea but it actually works.
 
 # This is a really noisy tool
-Yes, it is. Currently on antiscan.me it has a 0/26 detection and our current EDR does not flag the tool as malicious and does not kill the process while we create all that eicar files. This is basically because there is nothing malicious on the tool. Even the EICAR string is not flagged because in order to print it on a file you have to scape some characters.
+Yes, it is. Currently on antiscan.me it has a 0/26 detection and our current EDR does not flag the tool as malicious. It does not kill the process while we create all that eicar files. This is basically because there is nothing malicious on the tool. Even the EICAR string is not flagged because in order to print it on a file you have to scape some characters.
 
 The problem is, when you try to create a file on every folder and subfolder you can end up creating more than two thousand files. Every file created on a folder without an exclusion will create an incident/alert on the system.
 
