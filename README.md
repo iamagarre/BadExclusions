@@ -16,6 +16,3 @@ Feel free to modify the source code to whatever folder you wish. On my own resea
 
 # Requirements
 The tool was developed using Visual Studio Community 2022. You also need to install dirent.h library to be able to compile the code.
-
-# Improving the tool
-I'm not a great developer so any kind of feedback is welcome!
