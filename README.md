@@ -14,7 +14,9 @@ Yes, it is. Currently on antiscan.me it has a 0/26 detection and our current EDR
 
 The problem is, when you try to create a file on every folder and subfolder you can end up creating more than two thousand files. Every file created on a folder without an exclusion will create an incident/alert on the system.
 
-Feel free to modify the source code to whatever folder you wish. On my own research I've found C:\ProgramData is a common folder to find custom exclusions. Using C:\ProgramData instead C:\ will reduce the amount of alerts generated. Another option is to create a list of a few folders you want to check. It is common to add custom exclusions to folders of other security tools so you can create your own list and check for exclusions on that folders. Even if that folders do not exist on the system you are working on you can try to manually create that folder and run the tool to check if they have an exclusion because the machine could be under the scope of that exclusion. Your list can include C:\ProgramData\McAfee, C:\ProgramData\Kaspersky, etc.
+Feel free to modify the source code to whatever folder you wish. On my own research I've found C:\ProgramData is a common folder to find custom exclusions. Using C:\ProgramData instead C:\ will reduce the amount of alerts generated. 
+
+Another option is to create a list of a few folders you want to check. It is common to add custom exclusions to folders of other security tools so you can create your own list and check for exclusions on that folders. Even if that folders do not exist on the system you are working on you can try to manually create that folder and run the tool to check if they have an exclusion because the machine could be under the scope of that exclusion. Your list can include C:\ProgramData\McAfee, C:\ProgramData\Kaspersky, etc.
 
 # Requirements
 The tool was developed using Visual Studio Community 2022. You also need to install dirent.h library to be able to compile the code.
