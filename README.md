@@ -23,3 +23,6 @@ The tool was developed using Visual Studio Community 2022. You also need to inst
 
 # Update July 2023
 I did a small update of the tool to fix some issues with some AV/EDR. 
+
+![Screenshot](Img/Exclusions.png)
+![Screenshot](Img/Results.png)
