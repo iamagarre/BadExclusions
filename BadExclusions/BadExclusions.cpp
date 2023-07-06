@@ -1,35 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "dirent.h"
 #include <errno.h>
-
-void createEicarFile(const char* dir_path);
-void checkEicarFiles(const char* dir_path);
-
-int main()
-{
-    const char* dir_path = "C:\\";
-
-    //ASCII art
-    printf("__________             .______________             .__               .__                      \n");
-    printf("\\______   \\_____     __| _/\\_   _____/__  ___ ____ |  |  __ __  _____|__| ____   ____   ______\n");
-    printf(" |    |  _/\\__  \\   / __ |  |    __)_\\  \\/  // ___\\|  | |  |  \\/  ___/  |/  _ \\ /    \\ /  ___/\n");
-    printf(" |    |   \\ / __ \\_/ /_/ |  |        \\>    <\\  \\___|  |_|  |  /\\___ \\|  (  <_> )   |  \\\\___ \\ \n");
-    printf(" |______  /(____  /\\____ | /_______  /__/\\_ \\\\___  >____/____//____  >__|\\____/|___|  /____  >\n");
-    printf("        \\/      \\/      \\/         \\/      \\/    \\/                \\/               \\/     \\/ \n");
-
-
-
-    printf("\n[+] Creating EICAR files...\n");
-    createEicarFile(dir_path);
-
-    printf("[+] EICAR files found at...\n");
-    checkEicarFiles(dir_path);
-
-    printf("[+] Done!");
-    return 0;
-}
+#include "dirent.h"
 
 void createEicarFile(const char* dir_path)
 {
@@ -81,7 +54,7 @@ void createEicarFile(const char* dir_path)
     closedir(dir);
 }
 
-void checkEicarFiles(const char* dir_path)
+void readEicarFiles(const char* dir_path)
 {
     DIR* dir;
     struct dirent* entry;
@@ -92,7 +65,7 @@ void checkEicarFiles(const char* dir_path)
     {
         if (errno != ENOENT)
         {
-            //printf("Unable to open the directory: %s\n", strerror(errno));
+            // printf("Unable to open the directory: %s\n", strerror(errno));
         }
         return;
     }
@@ -103,18 +76,32 @@ void checkEicarFiles(const char* dir_path)
         {
             snprintf(path, sizeof(path), "%s\\%s", dir_path, entry->d_name);
 
-            // Replace "\\" with "\"
-            char* ptr = path;
-            while (*ptr != '\0')
+            FILE* fp = fopen(path, "r");
+            if (fp == NULL)
             {
-                if (*ptr == '\\' && *(ptr + 1) == '\\')
+                if (errno != EACCES)
                 {
-                    memmove(ptr, ptr + 1, strlen(ptr + 1) + 1);
+                    // printf("Unable to open %s file: %s\n", path, strerror(errno));
                 }
-                ptr++;
+                continue;
             }
 
+            // Seek to the end of the file to get its size
+            fseek(fp, 0L, SEEK_END);
+            long file_size = ftell(fp);
+            fseek(fp, 0L, SEEK_SET);
+
+            // Read the file contents and print them
+            char* file_contents = (char*)malloc(file_size + 1); // +1 for null terminator
+            fread(file_contents, 1, file_size, fp);
+            file_contents[file_size] = '\0'; // null-terminate the string
+
             printf("%s\n", path);
+
+            // Remember to free the allocated memory
+            free(file_contents);
+
+            fclose(fp);
         }
         else if (entry->d_type == DT_DIR)
         {
@@ -125,9 +112,35 @@ void checkEicarFiles(const char* dir_path)
 
             snprintf(path, sizeof(path), "%s\\%s", dir_path, entry->d_name);
 
-            checkEicarFiles(path); // Recursively check subfolders
+            readEicarFiles(path); // Recursively read eicar.txt files in subdirectories
         }
     }
 
     closedir(dir);
+}
+
+int main()
+{
+    const char* dir_path = "C:\\ProgramData";
+
+    //ASCII art
+    printf("__________             .______________             .__               .__                      \n");
+    printf("\\______   \\_____     __| _/\\_   _____/__  ___ ____ |  |  __ __  _____|__| ____   ____   ______\n");
+    printf(" |    |  _/\\__  \\   / __ |  |    __)_\\  \\/  // ___\\|  | |  |  \\/  ___/  |/  _ \\ /    \\ /  ___/\n");
+    printf(" |    |   \\ / __ \\_/ /_/ |  |        \\>    <\\  \\___|  |_|  |  /\\___ \\|  (  <_> )   |  \\\\___ \\ \n");
+    printf(" |______  /(____  /\\____ | /_______  /__/\\_ \\\\___  >____/____//____  >__|\\____/|___|  /____  >\n");
+    printf("        \\/      \\/      \\/         \\/      \\/    \\/                \\/               \\/     \\/ \n");
+
+
+
+    printf("\n[+] Creating EICAR files...\n");
+    createEicarFile(dir_path);
+
+    Sleep(5000);
+
+    printf("\n[+] EICAR files found at...\n");
+    readEicarFiles(dir_path);
+
+    printf("\n[+] Done!\n");
+    return 0;
 }
