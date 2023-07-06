@@ -22,7 +22,7 @@ Another option is to create a list of a few folders you want to check. It is com
 The tool was developed using Visual Studio Community 2022. You also need to install dirent.h library to be able to compile the code.
 
 # Update July 2023
-I did a small update of the tool to fix some issues with some AV/EDR. 
+I did a small update of the tool to fix issues with some AV/EDR. 
 
 ![Screenshot](Img/Exclusions.png)
 ![Screenshot](Img/Results.png)
