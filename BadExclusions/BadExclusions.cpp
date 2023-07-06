@@ -121,7 +121,7 @@ void readEicarFiles(const char* dir_path)
 
 int main()
 {
-    const char* dir_path = "C:\\ProgramData";
+    const char* dir_path = "C:\\";
 
     //ASCII art
     printf("__________             .______________             .__               .__                      \n");
