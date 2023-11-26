@@ -19,5 +19,5 @@ The problem is, when you try to create a file on every folder and subfolder you 
 # Microfot Defender Demo
 https://github.com/iamagarre/BadExclusions/assets/89855208/e2a8579c-a590-4d9a-8429-c290447423f8
 
-# Popular EDR Demo
+# EDR Demo
 https://github.com/iamagarre/BadExclusions/assets/89855208/a1cac2d8-fba9-48c2-a54c-e4d275b61a16
