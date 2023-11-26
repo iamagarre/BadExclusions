@@ -26,4 +26,7 @@ Added a function to use a txt file that contains a list of folders to create and
 I did a small update of the tool to fix issues with some AV/EDR. 
 
 # Microfot Defender Demo
-https://github.com/iamagarre/BadExclusions/blob/main/Video/FINAL%20-%20BadExclusions%20Demo%201.mp4
+https://github.com/iamagarre/BadExclusions/assets/89855208/e2a8579c-a590-4d9a-8429-c290447423f8
+
+# Popular EDR Demo
+https://github.com/iamagarre/BadExclusions/assets/89855208/a1cac2d8-fba9-48c2-a54c-e4d275b61a16
