@@ -17,12 +17,6 @@ The problem is, when you try to create a file on every folder and subfolder you 
 # Requirements
 The tool was developed using Visual Studio Community 2022. You also need to install dirent.h library to be able to compile the code.
 
-# Update November 2023
-Added a function to use a txt file that contains a list of folders to create and check for exclusions.
-
-# Update July 2023
-I did a small update of the tool to fix issues with some AV/EDR. 
-
 # Microfot Defender Demo
 https://github.com/iamagarre/BadExclusions/assets/89855208/e2a8579c-a590-4d9a-8429-c290447423f8
 
