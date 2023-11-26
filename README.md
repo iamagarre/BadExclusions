@@ -2,7 +2,7 @@
 BadExclusions is a tool to identify custom or undocumented folder exclusions on AV/EDR.
 
 # How it works?
-It creates a txt file on every folder and subfolder on specified path that contains the EICAR string. After creating all the files then it tries to read each file. If the AV/EDR removed the file it means no exclusion for that folder. If the file still exists then an exclusion is on the folder. The tool will print the full path to each file not removed by AV/EDR.
+BadExclusions creates a txt file on every folder and subfolder in an specified path that contains the EICAR string. After creating all the files then it tries to read each file. If the AV/EDR removed the file it means no exclusion for that folder. If the file still exists then an exclusion is on the folder. The tool will print the full path to each file not removed by AV/EDR.
 
 To identify an excluded folder the user that runs BadExclusions needs write permissions on that folder.
 
