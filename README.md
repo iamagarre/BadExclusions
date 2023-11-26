@@ -14,9 +14,6 @@ Yes, it is. Currently on antiscan.me it has a 0/26 detection and our current EDR
 
 The problem is, when you try to create a file on every folder and subfolder you can end up creating more than two thousand files. Every file created on a folder without an exclusion will create an incident/alert on the system.
 
-# Requirements
-The tool was developed using Visual Studio Community 2022. You also need to install dirent.h library to be able to compile the code.
-
 # Microfot Defender Demo
 https://github.com/iamagarre/BadExclusions/assets/89855208/e2a8579c-a590-4d9a-8429-c290447423f8
 
