@@ -1,10 +1,8 @@
 # BadExclusions
 BadExclusions is a tool to identify custom or undocumented folder exclusions on AV/EDR.
 
-![Screenshot](Img/BadExclusions.png)
-
 # How it works?
-It creates a txt file on every folder and subfolder on drive C:\ that contains the EICAR string. After creating all the files then it tries to read each file. If the AV/EDR removed the file it means no exclusion for that folder. If the file still exists then an exclusion is on the folder. The tool will print the full path to each file not removed by AV/EDR.
+It creates a txt file on every folder and subfolder on specified path that contains the EICAR string. After creating all the files then it tries to read each file. If the AV/EDR removed the file it means no exclusion for that folder. If the file still exists then an exclusion is on the folder. The tool will print the full path to each file not removed by AV/EDR.
 
 # Original idea?
 I was talking with a friend about custom exclusions made on AV/EDR and how to easily identify them. We had a silly idea but it actually works.
@@ -21,8 +19,11 @@ Another option is to create a list of a few folders you want to check. It is com
 # Requirements
 The tool was developed using Visual Studio Community 2022. You also need to install dirent.h library to be able to compile the code.
 
+# Update November 2023
+Added a function to use a txt file that contains a list of folders to create and check for exclusions.
+
 # Update July 2023
 I did a small update of the tool to fix issues with some AV/EDR. 
 
-![Screenshot](Img/Exclusions.png)
-![Screenshot](Img/Results.png)
+# Microfot Defender Demo
+https://github.com/iamagarre/BadExclusions/blob/main/Video/FINAL%20-%20BadExclusions%20Demo%201.mp4
