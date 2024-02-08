@@ -14,7 +14,7 @@ Yes, it is. The problem is, when you try to create a file on every folder and su
 
 For a version of BadExclusions that does not create a single alert go to https://github.com/iamagarre/BadExclusionsNWBO
 
-# Microfot Defender Demo
+# Microsoft Defender Demo
 https://github.com/iamagarre/BadExclusions/assets/89855208/e2a8579c-a590-4d9a-8429-c290447423f8
 
 # EDR Demo
