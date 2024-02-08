@@ -17,7 +17,7 @@ For a version of BadExclusions that does not create a single alert go to https:/
 # Requirements
 The AV/EDR should flag EICAR files as malicious. Not all vendors do it.
 
-The user who runs BadExclusions needs write permisions on the excluded folder in order to write the EICAR file.
+The user who runs BadExclusions needs write permissions on the excluded folder in order to write the EICAR file.
 
 # Microsoft Defender Demo
 https://github.com/iamagarre/BadExclusions/assets/89855208/e2a8579c-a590-4d9a-8429-c290447423f8
